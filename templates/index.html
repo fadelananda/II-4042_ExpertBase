@@ -9,7 +9,7 @@
 <body>
     <h1>Penilaian Performa Kinerja</h1>
     <div>
-        <form action="/performa" method="post">
+        <form id="form" action="/performa" method="post">
             <div>
                 <label for="posisi">Pilih Posisi:</label>
                 <select id="posisi" name="posisi">
@@ -22,15 +22,32 @@
                 </select>
             </div>
             <div>
+                <p>Apakah sudah memenuhi target? (Khusus untuk Pemasaran, Asisten Kepala Toko, dan Head Store)</p>
+                <input type="radio" id="yes"
+                    name="target" value="y">
+                <label for="yes">Yes</label>
+            
+                <input type="radio" id="no"
+                    name="target" value="n" required checked>
+                <label for="no">No</label>
+            </div>
+            <div>
                 <label for="lembur">Masukkan banyak hari lembur:</label>
-                <input id="lembur" name="lembur" type="number">
+                <input id="lembur" name="lembur" type="number" required>
             </div>
             <div>
                 <label for="jam">Masukkan banyak jam lembur per hari:</label>
-                <input id="jam" name="jam" type="number">
+                <input id="jam" name="jam" type="number" required>
             </div>
             <input type="submit">
         </form>
     </div>
 </body>
+<script>
+    form = document.getElementById("form")
+    select = document.getElementById("posisi")
+    select.addEventListener('change', (event) => {
+        console.log(select.value)
+    })
+</script>
 </html>

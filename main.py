@@ -12,21 +12,51 @@ def performa():
     if request.method == 'POST':
         env.reset()
 
+        posisi = request.form['posisi']
+        lembur = request.form['lembur']
+        jam = request.form['jam']
+
+        if (request.form['target'] == "y"):
+            target_acquired_assert = """
+                (is-target-acquired y)
+            """
+            env.assert_string(target_acquired_assert)
+
+        if (request.form['target'] == "n"):
+            target_acquired_assert = """
+                (is-target-acquired n)
+            """
+            env.assert_string(target_acquired_assert)
+
         position_input_assert = """
             (position \"{}\")
-        """.format(request.form['posisi'])
+        """.format(posisi)
         env.assert_string(position_input_assert)
 
         hari_lembur_assert = """
             (n_hari_lembur {})
-        """.format(request.form['lembur'])
+        """.format(lembur)
         env.assert_string(hari_lembur_assert)
 
         jam_lembur_assert = """
             (n_jam_lembur {})
-        """.format(request.form['jam'])
+        """.format(jam)
         env.assert_string(jam_lembur_assert)
 
         env.run()
 
-        return render_template('test.html', facts = env.facts())
+        facts = dict()
+        for fact in env.facts():
+            if "salary" in str(fact):
+                facts['Salary'] = fact[0]
+            
+            if "gaji_lembur" in str(fact):
+                facts['Gaji Lembur'] = fact[0]
+
+            if "bonus" in str(fact):
+                facts['Bonus'] = fact[0]
+
+        facts["Gaji Diterima"] = facts['Salary'] + facts['Gaji Lembur'] + facts['Bonus']
+
+        print(facts)
+        return render_template('hasil.html', facts = facts)

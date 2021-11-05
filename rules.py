@@ -87,12 +87,6 @@ env.build(
     """
 )
 
-# for rule in env.facts():
-#     print(rule)
-
-
-# for rule in env.rules():
-#     print(rule)
 env.build(
     """
 (defrule check_target_y
@@ -155,43 +149,6 @@ env.build(
     """
 )
 
-# env.build(
-#     """
-# (defrule read_input
-# =>
-#     ; (printout t
-#     ; "Posisi:" crlf
-#     ; "1. Asisten Kepala Toko" crlf
-#     ; "2. Junior Supervisor" crlf
-#     ; "3. Kasir" crlf
-#     ; "4. Pramuniaga" crlf
-#     ; "5. Pemasaran" crlf
-#     ; "6. Head Store" crlf
-#     ; "Masukkan nama posisi (ex:\"Kasir\"): ")
-#     ; (assert(position (read)))
-
-#     ; (printout t
-#     ; "Apakah sudah memenuhi target penjualan (y/n): "
-#     ; )
-#     ; (assert(is-target-acquired (read)))
-
-#     ; (printout t
-#     ; "Masukkan banyak hari lembur: "
-#     ; )
-#     ; (assert(n_hari_lembur (read)))
-
-#     (printout t
-#     "Masukkan banyak jam lembur perhari: "
-#     )
-#     (assert(n_jam_lembur (read)))
-
-#     (printout t
-#     ""
-#     )
-# )
-#     """
-# )
-
 env.build(
     """
 (defrule show_bonus_if_position_correct
@@ -199,10 +156,6 @@ env.build(
     (pegawai_bonus $?pegbon)
     (test(member$ ?pos ?pegbon))
 =>
-    (printout t 
-    "Apakah sudah memenuhi target penjualan (y/n): "
-    )
-    (assert(is-target-acquired (read)))
     (assert(target_bonus true))
 )
     """
@@ -219,41 +172,6 @@ env.build(
 )
     """
 )
-
-env.build(
-    """
-(defrule output_salary_without_bonus
-    (salary ?x)
-    (gaji_lembur ?z)
-    (target_bonus false)
-=>
-    (printout t 
-    "Gaji Pokok: " ?x crlf
-    "Gaji lembur :" ?z crlf
-    "Gaji Diterima: " (+ ?x ?z) crlf
-    )
-)
-    """
-)
-
-env.build(
-    """
-(defrule output_salary_with_bonus
-    (salary ?x)
-    (bonus ?y)
-    (gaji_lembur ?z)
-    (target_bonus true)
-=>
-    (printout t
-    "Gaji Pokok: " ?x crlf
-    "Bonus: " ?y crlf
-    "Gaji lembur: " ?z crlf
-    "Gaji Diterima: " (+ ?x ?y ?z) crlf
-    )
-)
-    """
-)
-
 
 if __name__ == "__main__":
     ret = env.reset()
