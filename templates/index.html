@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian Performa Kinerja</title>
+</head>
+<body>
+    <h1>Penilaian Performa Kinerja</h1>
+    <div>
+        <form action="/performa" method="post">
+            <div>
+                <label for="posisi">Pilih Posisi:</label>
+                <select id="posisi" name="posisi">
+                    <option value="Asisten Kepala Toko">Asisten Kepala Toko</option>
+                    <option value="Junior Supervisor">Junior Supervisor</option>
+                    <option value="Kasir">Kasir</option>
+                    <option value="Pramuniaga">Pramuniaga</option>
+                    <option value="Pemasaran">Pemasaran</option>
+                    <option value="Head Store">Head Store</option>
+                </select>
+            </div>
+            <div>
+                <label for="lembur">Masukkan banyak hari lembur:</label>
+                <input id="lembur" name="lembur" type="number">
+            </div>
+            <div>
+                <label for="jam">Masukkan banyak jam lembur per hari:</label>
+                <input id="jam" name="jam" type="number">
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
