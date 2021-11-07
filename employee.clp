@@ -38,7 +38,7 @@
 (defrule pemasaran_salary
     (position ?x)
     (test(eq "Pemasaran" ?x))
-=>
+=>_
     (assert (salary 8420000))
 )
 

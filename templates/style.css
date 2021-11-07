@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #edfbdd;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.main-content {
+  width: 50%;
+  max-width: 50rem;
+  background-color: #0f011f;
+  padding: 4rem;
+  border-radius: 30px;
+}
+
+.posisi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.posisi select {
+  padding: 0.3rem;
+  border: none;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+select{
+  color: #0f011f;
+  background-color: #edfbdd;
+}
+
+.target {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.target div input {
+  cursor: pointer;
+}
+
+.target div label{
+  margin-right: 2rem;
+}
+.target p {
+  margin-bottom: 0.5rem;
+}
+
+.lembur, .jam {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.lembur input, .jam input {
+  color: #0f011f;  
+  padding: 0.3rem;
+  border: none;
+  width: 10rem;
+}
+
+input[type=submit]{
+  padding: 0.5rem 1rem;
+  color: #0f011f;
+  background-color: #edfbdd;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}

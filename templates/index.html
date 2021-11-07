@@ -4,44 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Penilaian Performa Kinerja</title>
 </head>
 <body>
-    <h1>Penilaian Performa Kinerja</h1>
-    <div>
-        <form id="form" action="/performa" method="post">
-            <div>
-                <label for="posisi">Pilih Posisi:</label>
-                <select id="posisi" name="posisi">
-                    <option value="Asisten Kepala Toko">Asisten Kepala Toko</option>
-                    <option value="Junior Supervisor">Junior Supervisor</option>
-                    <option value="Kasir">Kasir</option>
-                    <option value="Pramuniaga">Pramuniaga</option>
-                    <option value="Pemasaran">Pemasaran</option>
-                    <option value="Head Store">Head Store</option>
-                </select>
-            </div>
-            <div>
-                <p>Apakah sudah memenuhi target? (Khusus untuk Pemasaran, Asisten Kepala Toko, dan Head Store)</p>
-                <input type="radio" id="yes"
-                    name="target" value="y">
-                <label for="yes">Yes</label>
-            
-                <input type="radio" id="no"
-                    name="target" value="n" required checked>
-                <label for="no">No</label>
-            </div>
-            <div>
-                <label for="lembur">Masukkan banyak hari lembur:</label>
-                <input id="lembur" name="lembur" type="number" required>
-            </div>
-            <div>
-                <label for="jam">Masukkan banyak jam lembur per hari:</label>
-                <input id="jam" name="jam" type="number" required>
-            </div>
-            <input type="submit">
-        </form>
-    </div>
+    <main>
+        <div class="main-content">
+            <h1>Penilaian Performa Kinerja</h1>
+            <form id="form" action="/performa" method="post">
+                <div class="posisi">
+                    <label for="posisi">Pilih Posisi:</label>
+                    <select id="posisi" name="posisi">
+                        <option value="Asisten Kepala Toko">Asisten Kepala Toko</option>
+                        <option value="Junior Supervisor">Junior Supervisor</option>
+                        <option value="Kasir">Kasir</option>
+                        <option value="Pramuniaga">Pramuniaga</option>
+                        <option value="Pemasaran">Pemasaran</option>
+                        <option value="Head Store">Head Store</option>
+                    </select>
+                </div>
+                <div class="target">
+                    <p>Apakah sudah memenuhi target? (Khusus untuk Pemasaran, Asisten Kepala Toko, dan Head Store)</p>
+                    <div>
+                        <input type="radio" id="yes"
+                            name="target" value="y">
+                        <label for="yes">Yes</label>
+                    
+                        <input type="radio" id="no"
+                            name="target" value="n" required checked>
+                        <label for="no">No</label>
+                    </div>
+                </div>
+                <div class="lembur">
+                    <label for="lembur">Masukkan banyak hari lembur:</label>
+                    <input id="lembur" name="lembur" type="number" min=0 value=0 required>
+                </div>
+                <div class="jam">
+                    <label for="jam">Masukkan banyak jam lembur per hari:</label>
+                    <input id="jam" name="jam" type="number" min=0 value=0 required>
+                </div>
+                <div class="submit">
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    </main>
 </body>
 <script>
     form = document.getElementById("form")
