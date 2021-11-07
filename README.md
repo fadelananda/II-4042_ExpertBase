@@ -1,6 +1,6 @@
 # II 4042 Web Based Expert System
 
-> Expert system untuk diagnosis permasalahan mobil
+> Expert system untuk penilai kinerja pegawai
 
 ## Table of contents
 
