@@ -56,7 +56,11 @@ def performa():
             if "bonus" in str(fact):
                 facts['Bonus'] = fact[0]
 
-        facts["Gaji Diterima"] = facts['Salary'] + facts['Gaji Lembur'] + facts['Bonus']
+        if isinstance(facts['Bonus'], float) or isinstance(facts['Bonus'], int):
+            facts["Gaji Diterima"] = facts['Salary'] + facts['Gaji Lembur'] + facts['Bonus']
+        else:
+            facts['Bonus'] = 'Position not eligible for bonus' 
+            facts["Gaji Diterima"] = facts['Salary'] + facts['Gaji Lembur']
 
         print(facts)
         return render_template('hasil.html', facts = facts)
