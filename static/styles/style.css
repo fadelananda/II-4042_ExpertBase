@@ -97,3 +97,7 @@ input[type=submit]{
   justify-content: center;
   margin-top: 4rem;
 }
+
+option {
+  color: black;
+}
