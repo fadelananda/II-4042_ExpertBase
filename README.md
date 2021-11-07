@@ -20,6 +20,7 @@ Web dapat dilihat di https://performa-kinerja.herokuapp.com/
 
 - Flask
 - CLIPS
+- Clipspy
 
 ## Setup
 
